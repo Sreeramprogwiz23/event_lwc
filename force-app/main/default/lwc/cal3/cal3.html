@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Calculator">
+        <lightning-input label="number" onchange={sum}></lightning-input>
+        <lightning-radio-group label="odd or even" options={opt} value={selectedoptionvalue} onchange={option}></lightning-radio-group>
+        Sum of {selectedoptionvalue} till {num} = {add}
+    </lightning-card>
+</template>

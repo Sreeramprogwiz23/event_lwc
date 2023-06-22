@@ -1,0 +1,98 @@
+<template>
+        <lightning-card title="Edit Account">
+                <lightning-tabset selected-tab-id="tabDetails">
+                    <lightning-tab label="Account Details">
+                        <lightning-record-form
+                        record-id="0015g00000xVaVVAA0"
+                        object-api-name="Account"
+                        fields={fieldsToDisplay1} mode="edit">
+                    </lightning-record-form>
+                    </lightning-tab>   
+                    <lightning-tab label="Account Specification">
+                        <lightning-record-form
+                        record-id="0015g00000xVaVVAA0"
+                        object-api-name="Account"
+                        fields={fieldsToDisplay2} mode="edit">
+                        </lightning-record-form>
+                    </lightning-tab>   
+                    <lightning-tab label="Rating">
+                        <lightning-record-form
+                        record-id="0015g00000xVaVVAA0"
+                        object-api-name="Account"
+                        fields={fieldsToDisplay3} mode="edit">
+                        </lightning-record-form>
+                    </lightning-tab>   
+                    <lightning-tab label="Variant">
+                        <lightning-record-form
+                        record-id="0015g00000xVaVVAA0"
+                        object-api-name="Account"
+                        fields={fieldsToDisplay4} mode="edit">
+                        </lightning-record-form>
+                    </lightning-tab>
+                    <lightning-tab label="related Record Details">
+                        <lightning-tabset>
+                            <lightning-tab label="Contacts">
+                                <template if:true={contacts}>
+                                    <lightning-layout multiple-rows>
+                                        <template for:each={contacts} for:item="contact">
+                                            
+                                                    <lightning-layout-item size="4"  key={contact.Id} class="slds-box slds-p-around_none slds-m-around_small" onclick={contactopen} data-contact-id={contact.Id}>
+                                                            Id    : {contact.Id}<br>
+                                                
+                                                            Name  : {contact.FirstName} {contact.LastName}<br>
+                                                
+                                                            Email : {contact.Email}<br>
+                                                    </lightning-layout-item>
+                                                </template>
+                                                </lightning-layout> 
+                                </template>
+            
+                                <template if:false={contacts}>
+                                    No related accounts found.
+                                </template>
+                            </lightning-tab>
+                            <lightning-tab label="Opportunities">
+                                <template if:true={opportunities}>
+                                    <lightning-layout multiple-rows>
+                                        <template for:each={opportunities} for:item="opportunity">
+                                            
+                                                    <lightning-layout-item size="4"  key={opportunity.Id} class="slds-box slds-p-around_none slds-m-around_small">
+                                                            Amount    : {opportunity.Amount}<br>
+                                                
+                                                            Closedate  : {opportunity.Closedate}<br>
+                                                
+                                                            Description : {opportunity.Description}<br>
+                                                    </lightning-layout-item>
+                                                </template>
+                                                </lightning-layout> 
+                                </template>
+            
+                                <template if:false={opportunities}>
+                                    No related accounts found.
+                                </template>
+                            </lightning-tab>
+                            <lightning-tab label="Cases">
+                                <template if:true={cases}>
+                                    <lightning-layout multiple-rows>
+                                        <template for:each={cases} for:item="salesforcecase">
+                                            
+                                                    <lightning-layout-item size="4"  key={cases.Id} class="slds-box slds-p-around_none slds-m-around_small">
+                                                        Case Number    : {salesforcecase.CaseNumber}<br>
+                                                
+                                                        Owner Id  : {salesforcecase.OwnerId}<br>
+                                                
+                                                        Status : {salesforcecase.Status}<br>
+                                                    </lightning-layout-item>
+                                                </template>
+                                                </lightning-layout> 
+                                </template>
+            
+                                <template if:false={opportunities}>
+                                    No related accounts found.
+                                </template>
+                            </lightning-tab>
+                        </lightning-tabset>
+                    </lightning-tab>
+                </lightning-tabset>
+        </lightning-card>
+</template>

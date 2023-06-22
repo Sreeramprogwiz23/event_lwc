@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="New Account">
+        <lightning-card slot="actions">
+            <span class="slds-border_left--bold">Account Name : {name}</span>
+            <span class="slds-border_left--bold">Active : {active}</span>            
+        </lightning-card>
+        <lightning-card>
+            <lightning-tabset selected-tab-id="tabDetails">
+                <lightning-tab label="Account Details">
+                        <lightning-input class="input" label="Account Name" onchange={nm} type="text"></lightning-input>
+                        <lightning-input class="input" label="Account Number" onchange={num} type="number"></lightning-input>
+                        <lightning-input class="input" label="Account Site" onchange={site} type="url"></lightning-input>
+                </lightning-tab>
+
+                <lightning-tab label="Account Specification">
+                    <lightning-input class="input" label="Account Source" onchange={accsor} type="picklist"></lightning-input>
+                    <lightning-input class="input" label="Active" onchange={act} type="picklist"></lightning-input>
+                    <lightning-input class="input" label="Annual Revenue" onchange={annrev} type="currency"></lightning-input>
+                </lightning-tab>
+
+                <lightning-tab label="Rating">
+                    <lightning-input class="input" label="Industry" onchange={industry} type="picklist"></lightning-input>
+                    <lightning-input class="input" label="Phone" onchange={phone} type="text"></lightning-input>
+                    <lightning-input class="input" label="Rating" onchange={rating} type="picklist"></lightning-input>
+                </lightning-tab>
+
+                <lightning-tab label="Variant">
+                    <lightning-input class="input" label="Type" onchange={typ} type="picklist"></lightning-input>
+                </lightning-tab>
+
+            </lightning-tabset>
+        </lightning-card>
+        <div class="slds-text-align_center">
+            <lightning-button label="Save" onclick={save}></lightning-button>
+        </div>       
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+  <lightning-card title="Sum of Odd/Even Numbers">
+      <lightning-input type="number" label="Enter a value" onchange={handleChange}></lightning-input>
+      <lightning-radio-group label="Select odd or even" options={options} value={selectedOption} onchange={handleRadioChange}></lightning-radio-group>
+      <template if:true={sum}>
+          <p>The sum of {selectedOption} numbers till {value} is {sum}</p>
+      </template>
+  </lightning-card>
+</template>

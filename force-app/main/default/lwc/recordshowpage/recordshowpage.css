@@ -1,0 +1,10 @@
+.input
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.slds-border_left--bold {
+    border-left: 3px solid rgb(119, 207, 19);
+    margin-left: 5px;
+    margin-right: 5px;
+}
